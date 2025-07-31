@@ -15,11 +15,7 @@ _Figure: Main interface on a 1920×1080 screen_
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
 - [Known Issues](#known-issues)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
@@ -56,3 +52,23 @@ _Figure: Main interface on a 1920×1080 screen_
    ```bash
    git clone https://github.com/Mohanad-Fawzy-eg/2Do.git
    ```
+
+### Usage
+
+- Add, sort, and manage your daily tasks with ease.
+- Click the 🎲 Random button for a fun surprise task.
+- Use action buttons to quickly mark tasks as complete or remove them.
+
+---
+
+### Known Issues
+
+⚠️ This app is currently optimized only for 1920×1080 screen resolution.
+On other screen sizes, layout and UI elements may not display correctly.
+
+---
+
+### Contact
+
+Want to learn more or get in touch?
+🌐 Visit my website: mohanad-fawzy.web.app
