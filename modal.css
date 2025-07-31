@@ -1,0 +1,210 @@
+.modal {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(1);
+  width: 40%;
+  height: 30%;
+  padding: 1rem;
+  background-color: var(--bg-surface);
+  z-index: 1000;
+  gap: 1rem;
+  border: 1px solid var(--bg-elevated);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+
+  text-align: center;
+
+  animation: show 200ms ease-in-out;
+  -webkit-animation: show 200ms ease-in-out;
+}
+
+.modal.hide {
+  transform: translate(-50%, 50%) scale(0);
+  animation: hide 200ms ease-in-out;
+  -webkit-animation: hide 200ms ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    transform: translate(-50%, 50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-50%, 50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(0);
+    opacity: 0;
+  }
+}
+
+.modal form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr 4fr;
+  row-gap: 1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.modal form span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal form input {
+  all: unset;
+  text-align: left;
+  width: 90%;
+  height: 2rem;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: var(--text);
+  background-color: var(--bg-elevated);
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    background-color: var(--bg);
+    border-color: var(--primary);
+  }
+}
+
+.modal form .buttons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-self: self-end;
+  justify-content: end;
+  gap: 0.25rem;
+
+  button {
+    all: unset;
+    cursor: pointer;
+    min-width: 4rem;
+    width: auto;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
+
+  #cancel {
+    color: var(--text);
+    background-color: var(--danger);
+  }
+
+  #save {
+    background-color: var(--bg-elevated);
+  }
+}
+
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal .modal-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+  gap: 0.25rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+
+  button {
+    all: unset;
+    cursor: pointer;
+    min-width: 4rem;
+    width: auto;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
+
+  #mod-confirm {
+    color: var(--text);
+    background-color: var(--bg-surface);
+  }
+
+  #mod-cancel {
+    background-color: var(--danger);
+  }
+}
+
+.modal.cfm-modal {
+  padding-top: 1.75rem;
+  transform: translate(-50%, 150%) scale(1);
+  width: 30rem;
+  height: 7.5rem;
+
+  animation: cfm-show 200ms ease-in-out;
+  -webkit-animation: cfm-show 200ms ease-in-out;
+}
+
+.modal.cfm-modal.hide {
+  transform: translate(-50%, 150%) scale(0);
+  opacity: 0;
+  animation: cfm-hide 200ms ease-in-out;
+  -webkit-animation: cfm-hide 200ms ease-in-out;
+}
+
+@keyframes cfm-show {
+  0% {
+    transform: translate(-50%, 150%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 150%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cfm-hide {
+  0% {
+    transform: translate(-50%, 150%) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-50%, 150%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 150%) scale(0);
+    opacity: 0;
+  }
+}

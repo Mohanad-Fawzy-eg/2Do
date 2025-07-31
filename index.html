@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2Do by Mohanad Fawzy</title>
+    <link rel="icon" href="./check-mark.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="action-buttons.css" />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="header">
+        <h1>2Do ✅</h1>
+        <span
+          >Made by
+          <a href="https://mohanad-fawzy.web.app/" target="_blank"
+            >Mohanad Fawzy</a
+          ></span
+        >
+      </div>
+      <form action="" id="form">
+        <input
+          type="text"
+          name="task"
+          id="task"
+          placeholder="What do you want to do?"
+          autocomplete="off"
+          maxlength="70"
+          required
+        />
+        <button type="submit">
+          <svg
+            fill="#000000"
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 500 500"
+            enable-background="new 0 0 500 500"
+            xml:space="preserve"
+          >
+            <path
+              d="M306,192h-48v-48c0-4.4-3.6-8-8-8s-8,3.6-8,8v48h-48c-4.4,0-8,3.6-8,8s3.6,8,8,8h48v48c0,4.4,3.6,8,8,8s8-3.6,8-8v-48h48
+	c4.4,0,8-3.6,8-8S310.4,192,306,192z"
+            />
+          </svg>
+        </button>
+
+        <button id="lucky" type="button">
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            class="bi bi-dice-3"
+          >
+            <path
+              d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"
+            />
+            <path
+              d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+            />
+          </svg>
+        </button>
+      </form>
+
+      <div class="action-btn">
+        <button data-fn="Check all" id="check-all" data-msg="check all tasks">
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.5 12.5L5.57574 16.5757C5.81005 16.8101 6.18995 16.8101 6.42426 16.5757L9 14"
+              stroke="#000000"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M16 7L12 11"
+              stroke="#000000"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M7 12L11.5757 16.5757C11.8101 16.8101 12.1899 16.8101 12.4243 16.5757L22 7"
+              stroke="#000000"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <button
+          data-fn="Uncheck all"
+          id="uncheck-all"
+          data-msg="uncheck all tasks"
+        >
+          <div class="border-circle" style="pointer-events: none"></div>
+        </button>
+        <button
+          data-fn="Delete checked"
+          id="delete-checked"
+          data-msg="delete all checked tasks"
+        >
+          <svg
+            fill="#000000"
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 460.775 460.775"
+            xml:space="preserve"
+          >
+            <path
+              d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+	c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+	c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+	c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+	l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+	c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"
+            />
+          </svg>
+        </button>
+        <label data-fn="Sort tasks" id="sort">
+          <input type="checkbox" id="sort-checkbox" />
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 7L2 7"
+              stroke="#1C274C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M19 12L5 12"
+              stroke="#1C274C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M16 17H8"
+              stroke="#1C274C"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <ul>
+            <li>Urgent</li>
+            <li>Completed</li>
+            <li>In progress</li>
+            <li>Alphabetically</li>
+          </ul>
+        </label>
+      </div>
+      <h3 id="no-tasks" style="display: none">
+        There are no tasks, have fun adding some 👆
+      </h3>
+      <ul id="tasks-list"></ul>
+    </main>
+  </body>
+  <script src="main.js" type="module"></script>
+  <script src="lucky.js" type="module"></script>
+</html>
