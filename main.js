@@ -247,6 +247,7 @@ const editTask = (li) => {
     closeModal();
     checkSorting();
     showTopMsg("Task edited successfully!", "success");
+    rerenderList();
   });
 
   form.appendChild(text);

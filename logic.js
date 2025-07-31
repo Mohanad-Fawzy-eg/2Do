@@ -1,15 +1,15 @@
 //* Local Storage:
 
 export function saveTasks(tasks) {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem("2Do-tasks-0129MoFa", JSON.stringify(tasks));
 }
 
 export function loadTasks() {
-  return JSON.parse(localStorage.getItem("tasks")) || [];
+  return JSON.parse(localStorage.getItem("2Do-tasks-0129MoFa")) || [];
 }
 
 export function clearTasks() {
-  localStorage.removeItem("tasks");
+  localStorage.removeItem("2Do-tasks-0129MoFa");
 }
 
 export function updateLocalStorage(tasks) {
