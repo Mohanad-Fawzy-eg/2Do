@@ -54,6 +54,5 @@ _Figure: Main interface on a 1920×1080 screen_
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/Mohanad-Fawzy-eg/2Do.git
    ```
