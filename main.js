@@ -20,6 +20,21 @@ tasks_form.addEventListener("submit", (e) => {
 
 //^ Task handling:
 
+const checkTask = (taskEl) => {
+  taskEl.classList.toggle("completed");
+  const id = taskEl.getAttribute("data-id");
+  tasks = tasks.map((task) => {
+    if (task.id == id) {
+      task.completed = !task.completed;
+      return task;
+    }
+    return task;
+  });
+
+  checkSorting();
+  logic.updateLocalStorage(tasks);
+};
+
 const addTask = (task, create = true) => {
   const task_el = document.createElement("li");
   const check_box = document.createElement("input");
@@ -161,20 +176,6 @@ const createUniqueID = () => {
     else return;
   });
   return id;
-};
-
-const checkTask = (e) => {
-  e.classList.toggle("completed");
-  tasks = tasks.map((task) => {
-    if (task.id == e.getAttribute("data-id")) {
-      task.completed = !task.completed;
-      task.completedDate = new Date(Date.now()).toLocaleString();
-      return task;
-    }
-  });
-
-  checkSorting();
-  logic.updateLocalStorage(tasks);
 };
 
 const removeTask = (e) => {

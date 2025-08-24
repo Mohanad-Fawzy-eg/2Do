@@ -71,8 +71,11 @@ html {
 }
 
 body {
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--gradient-background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text);
   display: flex;
   flex-direction: row;
@@ -88,13 +91,50 @@ svg {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
-  h1 {
-    font-size: 3rem;
-    font-weight: 600;
+  &::after {
+    position: absolute;
+    content: " v1.0.0 beta";
+    text-wrap: nowrap;
+    color: var(--text-muted) !important;
+    font-size: 0.75rem;
+    margin-left: calc(100% + 3rem);
+    margin-top: 2.25rem;
   }
 
-  span {
+  #title {
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 600;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, var(--secondary), #fff 80%);
+    background-size: 500%;
+    background-position: right;
+    transition: all 750ms ease-in-out;
+
+    .cool-litter {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(
+        135deg,
+        var(--primary),
+        color-mix(in hsl, var(--primary), #fff 80%)
+      );
+      background-size: 250%;
+    }
+
+    &:hover {
+      background-position: center;
+    }
+  }
+
+  span:nth-child(2) {
     color: var(--text-muted);
 
     a {
@@ -569,4 +609,28 @@ li.remove-anim {
   padding-left: 1rem;
   border: 1px solid var(--success);
   border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .media-warning {
+    position: fixed !important;
+    display: flex !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: 100vh;
+    height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    background-color: rgba(30, 30, 30, 0.75);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
